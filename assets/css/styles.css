@@ -7,7 +7,7 @@
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
-  --hue-color: 220;
+  --hue-color:1320;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --first-color-second: hsl(var(--hue-color), 89%, 60%);
   --first-color-alt: hsl(var(--hue-color), 57%, 63%);
@@ -21,7 +21,7 @@
   --container-color:#fff;
 
   /*===== Fuente y tipografia =====*/
-  --body-font: 'Poppins', sans-serif;
+  --body-font: 'Bakbak', sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
@@ -45,37 +45,6 @@
   }
 }
 
-/*==================== Variables Dark/Light ===============*/
-body.dark-theme{
-    /* HSL color mode */
-    --first-color-second: hsl(var(--hue-color), 30%, 8%);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --text-color: hsl(var(--hue-color), 8%, 75%);
-    --input-color: hsl(var(--hue-color), 29%, 16%);
-    --body-color: hsl(var(--hue-color), 28%, 12%);
-    --container-color:hsl(var(--hue-color), 29%,16%);
-}
-
-
-
-/*==================== Button Dark/Light ===============*/
-.nav__btns{
-  display: flex;
-  align-items: center;
-}
-
-
-.change-theme{
-  font-size: 1.25rem;
-  color: var(--title-color);
-  margin-right: var(--mb-1);
-  cursor: pointer;
-
-}
-
-.change-theme:hover{
-  color: var(--first-color);
-}
 
 /*===== BASE =====*/
 *, ::before, ::after {
@@ -113,6 +82,67 @@ img {
   display: block;
 }
 
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --fisrt-color-second: hsl(var(--hue-color),30%,8%);
+  --title-color: hsl(var(--hue-color),8%,15%);
+  --text-color: hsl(var(--hue-color),8%,80%);
+  --input-color: hsl(var(--hue-color),29%,16%);
+  --body-color: hsl(var(--hue-color),29%,12%);
+  --container-color: hsl(var(--hue-color),29%,16%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  position: center;
+  right: 1rem;
+  top: 1.8rem;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,h2,h3,p,ul{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+.home__social-icon {
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.home__social-icon:hover {
+  color: #fff;
+}
+
+
+
 /*===== CLASS CSS ===== */
 .section-title {
   position: relative;
@@ -146,7 +176,9 @@ img {
   display: grid;
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
+  
 }
+
 
 .l-header {
   width: 100%;
@@ -156,7 +188,17 @@ img {
   z-index: var(--z-fixed);
   background-color: var(--first-color);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  background-image: url(assets/img/fondo.jpg);
 }
+
+.site-header {
+  background-image: url(assets/img/fondo.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 10vh;
+  min-height: 60rem;
+}
+
 
 /*===== NAV =====*/
 .nav {
@@ -201,15 +243,15 @@ img {
   height: 0.18rem;
   left: 0;
   top: 2rem;
-  background-color: var(--first-color);
+  background-color: #fff;
 }
 
 .nav__logo {
-  color: var(--second-color);
+  color: #fff;
 }
 
 .nav__toggle {
-  color: var(--second-color);
+  color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -222,7 +264,7 @@ img {
   height: 0.18rem;
   left: 0;
   top: 2rem;
-  background-color: var(--first-color);
+  background-color: #fff;
 }
 
 /*=== Show menu ===*/
@@ -231,9 +273,20 @@ img {
 }
 
 /* ===== IMAGEN =====*/
-.bg-primary{
-    background-image: url(assets/img/fondo.jpg)
+.site-header {
+  background-image: url(assets/img/work1.jpg);
+  padding: 1rem 5 3rem 0;
 }
+
+
+.bg-primary{
+background-repeat: no-repeat;
+background-size: cover;
+height: 450px;
+padding:20px;
+}
+
+
 
 /*===== HOME =====*/
 
@@ -241,10 +294,14 @@ img {
   position: relative;
   row-gap: 5rem;
   padding: 4rem 0 5rem;
+  
 }
 
 .home__data {
   align-self: center;
+  position: center;
+  
+  
 }
 
 .home__title {
@@ -265,7 +322,7 @@ img {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--first-color);
 }
 
 .home__social-icon:hover {
@@ -284,7 +341,7 @@ img {
 }
 
 .home__blob-img {
-  width: 360px;
+  width: 400px;
 }
 
 /*BUTTONS*/
@@ -370,8 +427,11 @@ img {
   z-index: var(--z-back);
 }
 
+.skills__img {
+  border-radius: .5rem;
+}
 .skills__html {
-  width: 90%;
+  width: 75%;
 }
 
 .skills__css {
@@ -383,16 +443,18 @@ img {
 }
 
 .skills__py {
-  width: 85%;
+  width: 80%;
 }
 
 .skills__rea {
   width: 65%;
 }
 
-.skills__img {
-  border-radius: .5rem;
+.skills__nod {
+  width: 80%;
 }
+
+
 
 /* ===== WORK =====*/
 .work__container {
