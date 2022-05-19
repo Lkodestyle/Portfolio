@@ -84,12 +84,15 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme{
+  --hue-color:132;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
   --fisrt-color-second: hsl(var(--hue-color),30%,8%);
   --title-color: hsl(var(--hue-color),8%,15%);
   --text-color: hsl(var(--hue-color),8%,80%);
   --input-color: hsl(var(--hue-color),29%,16%);
-  --body-color: hsl(var(--hue-color),29%,12%);
+  --body-color: hsl(var(--hue-color),0%,0%);
   --container-color: hsl(var(--hue-color),29%,16%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -127,6 +130,15 @@ a{
 img{
   max-width: 100%;
   height: auto;
+}
+
+.home__blob {
+  fill: var(--body-color);
+}
+
+.home__blob-img {
+  width: 400px;
+  height: 350px;
 }
 
 
@@ -189,14 +201,6 @@ img{
   background-color: var(--first-color);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
   background-image: url(assets/img/fondo.jpg);
-}
-
-.site-header {
-  background-image: url(assets/img/fondo.jpg);
-  background-position: center center;
-  background-size: cover;
-  height: 10vh;
-  min-height: 60rem;
 }
 
 
@@ -287,7 +291,6 @@ padding:20px;
 }
 
 
-
 /*===== HOME =====*/
 
 .home {
@@ -298,8 +301,8 @@ padding:20px;
 }
 
 .home__data {
-  align-self: center;
-  position: center;
+  align-self: auto;
+  position: auto;
   
   
 }
@@ -342,6 +345,7 @@ padding:20px;
 
 .home__blob-img {
   width: 400px;
+  height: 350px;
 }
 
 /*BUTTONS*/
@@ -443,7 +447,7 @@ padding:20px;
 }
 
 .skills__py {
-  width: 80%;
+  width: 90%;
 }
 
 .skills__rea {
