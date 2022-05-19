@@ -340,7 +340,7 @@ padding:20px;
 }
 
 .home__blob {
-  fill: var(--first-color);
+  fill: var(--second-color);
 }
 
 .home__blob-img {
