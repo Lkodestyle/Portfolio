@@ -74,6 +74,121 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+/*================ INTERACTIVE PARTICLE NETWORK ================*/
+;(function() {
+    const canvas = document.getElementById('network-canvas')
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+
+    let width, height, particles, mouse, animId
+
+    mouse = { x: -9999, y: -9999 }
+
+    function resize() {
+        width = canvas.width = canvas.offsetWidth
+        height = canvas.height = canvas.offsetHeight
+    }
+
+    function createParticles() {
+        const count = Math.floor((width * height) / 12000)
+        particles = []
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                radius: Math.random() * 1.5 + 0.5
+            })
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, width, height)
+
+        const connectionDist = 120
+        const mouseDist = 180
+
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i]
+
+            p.x += p.vx
+            p.y += p.vy
+
+            if (p.x < 0 || p.x > width) p.vx *= -1
+            if (p.y < 0 || p.y > height) p.vy *= -1
+
+            const dx = mouse.x - p.x
+            const dy = mouse.y - p.y
+            const dist = Math.sqrt(dx * dx + dy * dy)
+
+            if (dist < mouseDist) {
+                const force = (mouseDist - dist) / mouseDist
+                p.vx += dx * force * 0.002
+                p.vy += dy * force * 0.002
+            }
+
+            const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy)
+            if (speed > 1.5) {
+                p.vx *= 0.98
+                p.vy *= 0.98
+            }
+
+            ctx.beginPath()
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
+            ctx.fillStyle = 'rgba(77, 157, 224, 0.5)'
+            ctx.fill()
+
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j]
+                const ddx = p.x - p2.x
+                const ddy = p.y - p2.y
+                const d = Math.sqrt(ddx * ddx + ddy * ddy)
+
+                if (d < connectionDist) {
+                    const alpha = (1 - d / connectionDist) * 0.15
+                    ctx.beginPath()
+                    ctx.moveTo(p.x, p.y)
+                    ctx.lineTo(p2.x, p2.y)
+                    ctx.strokeStyle = `rgba(77, 157, 224, ${alpha})`
+                    ctx.lineWidth = 0.5
+                    ctx.stroke()
+                }
+            }
+        }
+
+        animId = requestAnimationFrame(draw)
+    }
+
+    function init() {
+        resize()
+        createParticles()
+        draw()
+    }
+
+    const homeSection = document.getElementById('home')
+    homeSection.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect()
+        mouse.x = e.clientX - rect.left
+        mouse.y = e.clientY - rect.top
+    })
+    homeSection.addEventListener('mouseleave', () => {
+        mouse.x = -9999
+        mouse.y = -9999
+    })
+
+    let resizeTimeout
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout)
+        resizeTimeout = setTimeout(() => {
+            cancelAnimationFrame(animId)
+            init()
+        }, 200)
+    })
+
+    init()
+})()
+
 /*================ TYPING EFFECT ================*/
 const typedElement = document.getElementById('typed-text')
 const commands = [
@@ -160,14 +275,10 @@ const sr = ScrollReveal({
     easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
 })
 
-sr.reveal('.home__badge', { origin: 'top', delay: 200 })
-sr.reveal('.home__title', { delay: 400 })
-sr.reveal('.home__description', { delay: 600 })
-sr.reveal('.home__buttons', { delay: 800 })
-sr.reveal('.home__social', { delay: 1000 })
-sr.reveal('.home__panel', { origin: 'right', delay: 500, distance: '60px' })
-sr.reveal('.home__metric', { interval: 150, delay: 900 })
-sr.reveal('.home__stack-item', { interval: 80, delay: 1100 })
+sr.reveal('.home__label', { origin: 'left', delay: 200, distance: '20px' })
+sr.reveal('.home__description', { delay: 800 })
+sr.reveal('.home__actions', { delay: 1000 })
+sr.reveal('.home__aside', { origin: 'right', delay: 600, distance: '60px' })
 sr.reveal('.about__data', {})
 sr.reveal('.about__info-item', { interval: 150 })
 sr.reveal('.skills__group', { interval: 200 })
