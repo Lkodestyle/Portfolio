@@ -160,10 +160,14 @@ const sr = ScrollReveal({
     easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
 })
 
-sr.reveal('.home__terminal', { origin: 'top', delay: 300 })
-sr.reveal('.home__title, .home__subtitle, .home__description', { interval: 100, delay: 600 })
-sr.reveal('.home__buttons', { delay: 900 })
-sr.reveal('.home__social', { delay: 1100 })
+sr.reveal('.home__badge', { origin: 'top', delay: 200 })
+sr.reveal('.home__title', { delay: 400 })
+sr.reveal('.home__description', { delay: 600 })
+sr.reveal('.home__buttons', { delay: 800 })
+sr.reveal('.home__social', { delay: 1000 })
+sr.reveal('.home__panel', { origin: 'right', delay: 500, distance: '60px' })
+sr.reveal('.home__metric', { interval: 150, delay: 900 })
+sr.reveal('.home__stack-item', { interval: 80, delay: 1100 })
 sr.reveal('.about__data', {})
 sr.reveal('.about__info-item', { interval: 150 })
 sr.reveal('.skills__group', { interval: 200 })
