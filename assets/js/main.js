@@ -63,6 +63,32 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+/*===== EMAILJS CONTACT FORM =====*/
+emailjs.init('afBZWFNV6_OUuFbVh')
+
+const contactForm = document.getElementById('contact-form')
+const contactBtn = document.getElementById('contact-btn')
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    contactBtn.textContent = 'Sending...'
+    contactBtn.disabled = true
+
+    emailjs.sendForm('service_9w9o86s', 'template_083w1iu', contactForm)
+        .then(() => {
+            contactBtn.textContent = 'Sent!'
+            contactForm.reset()
+            setTimeout(() => {
+                contactBtn.textContent = 'Send Message'
+                contactBtn.disabled = false
+            }, 3000)
+        })
+        .catch(() => {
+            contactBtn.textContent = 'Error, try again'
+            contactBtn.disabled = false
+        })
+})
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',

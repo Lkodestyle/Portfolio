@@ -320,11 +320,11 @@
                     </div>
                 </div>
 
-                <form action="https://formspree.io/f/placeholder" method="POST" class="contact__form">
-                    <input type="text" name="name" placeholder="Name" class="contact__input" required>
-                    <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                <form id="contact-form" class="contact__form">
+                    <input type="text" name="from_name" placeholder="Name" class="contact__input" required>
+                    <input type="email" name="from_email" placeholder="Email" class="contact__input" required>
                     <textarea name="message" rows="10" placeholder="Your message" class="contact__input" required></textarea>
-                    <button type="submit" class="contact__button button">Send Message</button>
+                    <button type="submit" class="contact__button button" id="contact-btn">Send Message</button>
                 </form>
             </div>
         </section>
@@ -340,6 +340,9 @@
         </div>
         <p class="footer__copy">&#169; Lucas Cristaldo. All rights reserved</p>
     </footer>
+
+    <!--===== EMAILJS =====-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
