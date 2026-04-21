@@ -6,10 +6,56 @@
     <meta name="description" content="Lucas Cristaldo - Senior DevOps Engineer with 5+ years of experience in cloud architecture, IaC, CI/CD, and infrastructure modernization. AWS, Terraform, Kubernetes specialist.">
     <meta name="author" content="Lucas Cristaldo">
     <meta name="keywords" content="DevOps, Cloud Engineer, AWS, Terraform, Kubernetes, CI/CD, Docker, Infrastructure">
+    <meta name="theme-color" content="#1a2332">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://kit.fontawesome.com">
 
     <meta property="og:title" content="Lucas Cristaldo - Senior DevOps Engineer">
     <meta property="og:description" content="Senior DevOps Engineer specializing in cloud architecture, IaC, and CI/CD automation across multi-cloud environments.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lkodestyle.github.io/Portfolio/">
+
+    <link rel="canonical" href="https://lkodestyle.github.io/Portfolio/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lucas Cristaldo",
+        "jobTitle": "Senior DevOps Engineer",
+        "url": "https://lkodestyle.github.io/Portfolio/",
+        "email": "cristaldolucas01@gmail.com",
+        "telephone": "+5491135076161",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Buenos Aires",
+            "addressCountry": "AR"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/lcristaldo/",
+            "https://github.com/Lkodestyle"
+        ],
+        "knowsAbout": ["AWS", "Terraform", "Kubernetes", "Docker", "CI/CD", "Python", "Go", "Cloud Architecture", "DevOps", "Infrastructure as Code"],
+        "hasCredential": [
+            {"@type": "EducationalOccupationalCredential", "name": "Oracle Certified Foundations Associate"},
+            {"@type": "EducationalOccupationalCredential", "name": "AWS Technical Essentials"},
+            {"@type": "EducationalOccupationalCredential", "name": "GitHub Foundations"},
+            {"@type": "EducationalOccupationalCredential", "name": "LFS158 Introduction to Kubernetes"},
+            {"@type": "EducationalOccupationalCredential", "name": "AWS Serverless Badge"}
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Dualboot Partners"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Universidad de Palermo"
+        }
+    }
+    </script>
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://kit.fontawesome.com/2654601210.js" crossorigin="anonymous"></script>
@@ -37,6 +83,8 @@
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+                    <li class="nav__item"><a href="#cases" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#blog" class="nav__link">Articles</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
@@ -281,6 +329,144 @@
                         <li>Executed critical data migrations between cloud environments with zero downtime</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <!--===== CASE STUDIES =====-->
+        <section class="cases section" id="cases">
+            <h2 class="section-title">Case Studies</h2>
+
+            <div class="cases__container bd-grid">
+                <div class="cases__item">
+                    <div class="cases__icon">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                    </div>
+                    <h3 class="cases__title">Multi-Cloud Governance at Scale</h3>
+                    <span class="cases__tag">Enterprise Retail</span>
+                    <p class="cases__description">Managed 150+ cloud accounts across 4 providers (AWS, Azure, GCP, OCI), implementing SCPs and governance policies. Led a technical cell designing Terraform architectures presented to C-Level stakeholders.</p>
+                    <div class="cases__results">
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">150+</span>
+                            <span class="cases__metric-label">Accounts managed</span>
+                        </div>
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">4</span>
+                            <span class="cases__metric-label">Cloud providers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases__item">
+                    <div class="cases__icon">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="cases__title">70% Storage Cost Reduction</h3>
+                    <span class="cases__tag">FinOps · Serverless</span>
+                    <p class="cases__description">Designed and implemented a serverless architecture using AWS Step Functions, Lambda, and S3 Glacier to optimize storage lifecycle management, achieving a 70% cost reduction while maintaining data accessibility SLAs.</p>
+                    <div class="cases__results">
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">70%</span>
+                            <span class="cases__metric-label">Cost reduction</span>
+                        </div>
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">60%</span>
+                            <span class="cases__metric-label">Less ops time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases__item">
+                    <div class="cases__icon">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="cases__title">Monolith to Microservices Migration</h3>
+                    <span class="cases__tag">Fintech · Containers</span>
+                    <p class="cases__description">Led the migration of 7+ critical services from monolithic VMware infrastructure to containerized microservices with Docker and ECS Fargate. Established CI/CD standards eliminating direct server access and improving security posture.</p>
+                    <div class="cases__results">
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">7+</span>
+                            <span class="cases__metric-label">Services migrated</span>
+                        </div>
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">100%</span>
+                            <span class="cases__metric-label">Security improvement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases__item">
+                    <div class="cases__icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="cases__title">CI/CD Pipeline Acceleration</h3>
+                    <span class="cases__tag">E-commerce · Multi-cloud</span>
+                    <p class="cases__description">Implemented end-to-end CI/CD pipelines for an e-commerce platform running on AWS and GCP, reducing release cycles from 1 day to 2 hours. Achieved 99.9% infrastructure uptime and zero-downtime data migrations between cloud providers.</p>
+                    <div class="cases__results">
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">12x</span>
+                            <span class="cases__metric-label">Faster releases</span>
+                        </div>
+                        <div class="cases__metric">
+                            <span class="cases__metric-number">99.9%</span>
+                            <span class="cases__metric-label">Uptime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== BLOG =====-->
+        <section class="blog section" id="blog">
+            <h2 class="section-title">Articles</h2>
+
+            <div class="blog__container bd-grid">
+                <article class="blog__item">
+                    <div class="blog__icon">
+                        <i class="fa-brands fa-aws"></i>
+                    </div>
+                    <h3 class="blog__title">Multi-Account Strategy with AWS Organizations</h3>
+                    <p class="blog__excerpt">How to structure 100+ accounts with SCPs, OU hierarchies, and centralized billing for enterprise-scale governance.</p>
+                    <div class="blog__meta">
+                        <span class="blog__tag">AWS</span>
+                        <span class="blog__tag">Governance</span>
+                    </div>
+                </article>
+
+                <article class="blog__item">
+                    <div class="blog__icon">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                    <h3 class="blog__title">GitOps: From Zero to Production with Terraform + GitHub Actions</h3>
+                    <p class="blog__excerpt">A practical guide to implementing GitOps workflows for infrastructure, including state management, PR-based approvals, and drift detection.</p>
+                    <div class="blog__meta">
+                        <span class="blog__tag">Terraform</span>
+                        <span class="blog__tag">GitOps</span>
+                    </div>
+                </article>
+
+                <article class="blog__item">
+                    <div class="blog__icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="blog__title">Securing CI/CD Pipelines: Lessons from Production</h3>
+                    <p class="blog__excerpt">Real-world patterns for secret management, RBAC in pipelines, container image scanning, and eliminating direct server access.</p>
+                    <div class="blog__meta">
+                        <span class="blog__tag">Security</span>
+                        <span class="blog__tag">CI/CD</span>
+                    </div>
+                </article>
+
+                <article class="blog__item">
+                    <div class="blog__icon">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <h3 class="blog__title">FinOps in Practice: Cutting Cloud Costs by 70%</h3>
+                    <p class="blog__excerpt">Strategies using serverless architecture, lifecycle policies, and reserved capacity to dramatically reduce cloud spend without sacrificing performance.</p>
+                    <div class="blog__meta">
+                        <span class="blog__tag">FinOps</span>
+                        <span class="blog__tag">Serverless</span>
+                    </div>
+                </article>
             </div>
         </section>
 
