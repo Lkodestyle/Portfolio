@@ -6,8 +6,9 @@
     <meta name="description" content="Lucas Cristaldo - Senior DevOps Engineer with 5+ years of experience in cloud architecture, IaC, CI/CD, and infrastructure modernization. AWS, Terraform, Kubernetes specialist.">
     <meta name="author" content="Lucas Cristaldo">
     <meta name="keywords" content="DevOps, Cloud Engineer, AWS, Terraform, Kubernetes, CI/CD, Docker, Infrastructure">
-    <meta name="theme-color" content="#1a2332">
+    <meta name="theme-color" content="#0f172a">
 
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -59,7 +60,6 @@
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://kit.fontawesome.com/2654601210.js" crossorigin="anonymous"></script>
-
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Lucas Cristaldo - Senior DevOps Engineer</title>
@@ -70,7 +70,7 @@
     <header class="l-header">
         <nav class="nav bd-grid">
             <div>
-                <a href="#" class="nav__logo">Lucas Cristaldo</a>
+                <a href="#" class="nav__logo">LC<span class="nav__logo-dot">.</span></a>
             </div>
 
             <div class="nav__btns">
@@ -84,7 +84,7 @@
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
                     <li class="nav__item"><a href="#cases" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="#blog" class="nav__link">Articles</a></li>
+                    <li class="nav__item"><a href="#expertise" class="nav__link">Expertise</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
@@ -98,12 +98,26 @@
     <main class="l-main">
         <!--====================== HOME =======================-->
         <section class="home" id="home">
+            <div class="home__bg-grid"></div>
             <div class="home__container bd-grid">
                 <div class="home__data">
-                    <span class="home__greeting">$ whoami</span>
-                    <h1 class="home__title">Hi, I'm <span class="home__title-color">Lucas Cristaldo</span></h1>
+                    <div class="home__terminal">
+                        <div class="terminal__header">
+                            <span class="terminal__dot terminal__dot--red"></span>
+                            <span class="terminal__dot terminal__dot--yellow"></span>
+                            <span class="terminal__dot terminal__dot--green"></span>
+                            <span class="terminal__title">lcristaldo@cloud:~</span>
+                        </div>
+                        <div class="terminal__body">
+                            <span class="terminal__prompt">$</span>
+                            <span class="terminal__text" id="typed-text"></span>
+                            <span class="terminal__cursor">|</span>
+                        </div>
+                    </div>
+
+                    <h1 class="home__title">Lucas <span class="home__title-color">Cristaldo</span></h1>
                     <h2 class="home__subtitle">Senior DevOps Engineer</h2>
-                    <p class="home__description">Cloud & Infrastructure · AWS · Terraform · Kubernetes · CI/CD</p>
+                    <p class="home__description">Building scalable cloud infrastructure & automating everything in between.</p>
 
                     <div class="home__buttons">
                         <a href="#contact" class="button">Contact Me</a>
@@ -112,9 +126,9 @@
                 </div>
 
                 <div class="home__social">
-                    <a href="https://www.linkedin.com/in/lcristaldo/" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Lkodestyle" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="mailto:cristaldolucas01@gmail.com" class="home__social-icon"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/lcristaldo/" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Lkodestyle" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:cristaldolucas01@gmail.com" class="home__social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </section>
@@ -164,9 +178,7 @@
                             <span class="skills__name">AWS</span>
                         </div>
                         <div class="skills__bar skills__aws"></div>
-                        <div>
-                            <span class="skills__percentage">95%</span>
-                        </div>
+                        <div><span class="skills__percentage">95%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
@@ -174,9 +186,7 @@
                             <span class="skills__name">Terraform / IaC</span>
                         </div>
                         <div class="skills__bar skills__terraform"></div>
-                        <div>
-                            <span class="skills__percentage">90%</span>
-                        </div>
+                        <div><span class="skills__percentage">90%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
@@ -184,9 +194,7 @@
                             <span class="skills__name">Docker / Kubernetes</span>
                         </div>
                         <div class="skills__bar skills__docker"></div>
-                        <div>
-                            <span class="skills__percentage">90%</span>
-                        </div>
+                        <div><span class="skills__percentage">90%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
@@ -194,9 +202,7 @@
                             <span class="skills__name">CI/CD (GitLab, GitHub Actions)</span>
                         </div>
                         <div class="skills__bar skills__cicd"></div>
-                        <div>
-                            <span class="skills__percentage">90%</span>
-                        </div>
+                        <div><span class="skills__percentage">90%</span></div>
                     </div>
                 </div>
 
@@ -208,9 +214,7 @@
                             <span class="skills__name">Python</span>
                         </div>
                         <div class="skills__bar skills__python"></div>
-                        <div>
-                            <span class="skills__percentage">85%</span>
-                        </div>
+                        <div><span class="skills__percentage">85%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
@@ -218,9 +222,7 @@
                             <span class="skills__name">Go</span>
                         </div>
                         <div class="skills__bar skills__go"></div>
-                        <div>
-                            <span class="skills__percentage">70%</span>
-                        </div>
+                        <div><span class="skills__percentage">70%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
@@ -228,19 +230,15 @@
                             <span class="skills__name">Linux</span>
                         </div>
                         <div class="skills__bar skills__linux"></div>
-                        <div>
-                            <span class="skills__percentage">90%</span>
-                        </div>
+                        <div><span class="skills__percentage">90%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='fa-solid fa-chart-line skills__icon'></i>
-                            <span class="skills__name">Monitoring (Datadog, Prometheus, Grafana)</span>
+                            <span class="skills__name">Monitoring (Datadog, Prometheus)</span>
                         </div>
                         <div class="skills__bar skills__monitoring"></div>
-                        <div>
-                            <span class="skills__percentage">85%</span>
-                        </div>
+                        <div><span class="skills__percentage">85%</span></div>
                     </div>
                 </div>
             </div>
@@ -338,9 +336,7 @@
 
             <div class="cases__container bd-grid">
                 <div class="cases__item">
-                    <div class="cases__icon">
-                        <i class="fa-solid fa-cloud-arrow-down"></i>
-                    </div>
+                    <div class="cases__icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
                     <h3 class="cases__title">Multi-Cloud Governance at Scale</h3>
                     <span class="cases__tag">Enterprise Retail</span>
                     <p class="cases__description">Managed 150+ cloud accounts across 4 providers (AWS, Azure, GCP, OCI), implementing SCPs and governance policies. Led a technical cell designing Terraform architectures presented to C-Level stakeholders.</p>
@@ -357,9 +353,7 @@
                 </div>
 
                 <div class="cases__item">
-                    <div class="cases__icon">
-                        <i class="fa-solid fa-piggy-bank"></i>
-                    </div>
+                    <div class="cases__icon"><i class="fa-solid fa-piggy-bank"></i></div>
                     <h3 class="cases__title">70% Storage Cost Reduction</h3>
                     <span class="cases__tag">FinOps · Serverless</span>
                     <p class="cases__description">Designed and implemented a serverless architecture using AWS Step Functions, Lambda, and S3 Glacier to optimize storage lifecycle management, achieving a 70% cost reduction while maintaining data accessibility SLAs.</p>
@@ -376,12 +370,10 @@
                 </div>
 
                 <div class="cases__item">
-                    <div class="cases__icon">
-                        <i class="fa-solid fa-cubes"></i>
-                    </div>
+                    <div class="cases__icon"><i class="fa-solid fa-cubes"></i></div>
                     <h3 class="cases__title">Monolith to Microservices Migration</h3>
                     <span class="cases__tag">Fintech · Containers</span>
-                    <p class="cases__description">Led the migration of 7+ critical services from monolithic VMware infrastructure to containerized microservices with Docker and ECS Fargate. Established CI/CD standards eliminating direct server access and improving security posture.</p>
+                    <p class="cases__description">Led the migration of 7+ critical services from monolithic VMware infrastructure to containerized microservices with Docker and ECS Fargate. Established CI/CD standards eliminating direct server access.</p>
                     <div class="cases__results">
                         <div class="cases__metric">
                             <span class="cases__metric-number">7+</span>
@@ -395,12 +387,10 @@
                 </div>
 
                 <div class="cases__item">
-                    <div class="cases__icon">
-                        <i class="fa-solid fa-rocket"></i>
-                    </div>
+                    <div class="cases__icon"><i class="fa-solid fa-rocket"></i></div>
                     <h3 class="cases__title">CI/CD Pipeline Acceleration</h3>
                     <span class="cases__tag">E-commerce · Multi-cloud</span>
-                    <p class="cases__description">Implemented end-to-end CI/CD pipelines for an e-commerce platform running on AWS and GCP, reducing release cycles from 1 day to 2 hours. Achieved 99.9% infrastructure uptime and zero-downtime data migrations between cloud providers.</p>
+                    <p class="cases__description">Implemented end-to-end CI/CD pipelines for an e-commerce platform on AWS and GCP, reducing release cycles from 1 day to 2 hours with 99.9% uptime and zero-downtime migrations.</p>
                     <div class="cases__results">
                         <div class="cases__metric">
                             <span class="cases__metric-number">12x</span>
@@ -415,58 +405,55 @@
             </div>
         </section>
 
-        <!--===== BLOG =====-->
-        <section class="blog section" id="blog">
-            <h2 class="section-title">Articles</h2>
+        <!--===== EXPERTISE =====-->
+        <section class="expertise section" id="expertise">
+            <h2 class="section-title">Expertise</h2>
+            <p class="section-subtitle">Areas where I deliver the most impact</p>
 
-            <div class="blog__container bd-grid">
-                <article class="blog__item">
-                    <div class="blog__icon">
-                        <i class="fa-brands fa-aws"></i>
+            <div class="expertise__container bd-grid">
+                <div class="expertise__item">
+                    <div class="expertise__icon"><i class="fa-brands fa-aws"></i></div>
+                    <h3 class="expertise__title">Cloud Architecture</h3>
+                    <p class="expertise__description">Multi-account strategies, landing zones, SCPs, governance at scale across AWS, Azure, GCP, and OCI.</p>
+                    <div class="expertise__tags">
+                        <span>AWS Organizations</span>
+                        <span>Landing Zones</span>
+                        <span>Multi-cloud</span>
                     </div>
-                    <h3 class="blog__title">Multi-Account Strategy with AWS Organizations</h3>
-                    <p class="blog__excerpt">How to structure 100+ accounts with SCPs, OU hierarchies, and centralized billing for enterprise-scale governance.</p>
-                    <div class="blog__meta">
-                        <span class="blog__tag">AWS</span>
-                        <span class="blog__tag">Governance</span>
-                    </div>
-                </article>
+                </div>
 
-                <article class="blog__item">
-                    <div class="blog__icon">
-                        <i class="fa-solid fa-code-branch"></i>
+                <div class="expertise__item">
+                    <div class="expertise__icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <h3 class="expertise__title">GitOps & CI/CD</h3>
+                    <p class="expertise__description">End-to-end pipeline design with PR-based approvals, drift detection, automated testing, and zero-downtime deployments.</p>
+                    <div class="expertise__tags">
+                        <span>GitHub Actions</span>
+                        <span>GitLab CI</span>
+                        <span>Terraform</span>
                     </div>
-                    <h3 class="blog__title">GitOps: From Zero to Production with Terraform + GitHub Actions</h3>
-                    <p class="blog__excerpt">A practical guide to implementing GitOps workflows for infrastructure, including state management, PR-based approvals, and drift detection.</p>
-                    <div class="blog__meta">
-                        <span class="blog__tag">Terraform</span>
-                        <span class="blog__tag">GitOps</span>
-                    </div>
-                </article>
+                </div>
 
-                <article class="blog__item">
-                    <div class="blog__icon">
-                        <i class="fa-solid fa-shield-halved"></i>
+                <div class="expertise__item">
+                    <div class="expertise__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="expertise__title">Security & Compliance</h3>
+                    <p class="expertise__description">Secret management, RBAC pipelines, container scanning, eliminating direct server access, and compliance automation.</p>
+                    <div class="expertise__tags">
+                        <span>DevSecOps</span>
+                        <span>SCPs</span>
+                        <span>Container Security</span>
                     </div>
-                    <h3 class="blog__title">Securing CI/CD Pipelines: Lessons from Production</h3>
-                    <p class="blog__excerpt">Real-world patterns for secret management, RBAC in pipelines, container image scanning, and eliminating direct server access.</p>
-                    <div class="blog__meta">
-                        <span class="blog__tag">Security</span>
-                        <span class="blog__tag">CI/CD</span>
-                    </div>
-                </article>
+                </div>
 
-                <article class="blog__item">
-                    <div class="blog__icon">
-                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                <div class="expertise__item">
+                    <div class="expertise__icon"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+                    <h3 class="expertise__title">FinOps & Optimization</h3>
+                    <p class="expertise__description">Cost reduction strategies with serverless architectures, lifecycle policies, reserved capacity, and right-sizing analysis.</p>
+                    <div class="expertise__tags">
+                        <span>Serverless</span>
+                        <span>Cost Reduction</span>
+                        <span>Right-sizing</span>
                     </div>
-                    <h3 class="blog__title">FinOps in Practice: Cutting Cloud Costs by 70%</h3>
-                    <p class="blog__excerpt">Strategies using serverless architecture, lifecycle policies, and reserved capacity to dramatically reduce cloud spend without sacrificing performance.</p>
-                    <div class="blog__meta">
-                        <span class="blog__tag">FinOps</span>
-                        <span class="blog__tag">Serverless</span>
-                    </div>
-                </article>
+                </div>
             </div>
         </section>
 
@@ -509,7 +496,7 @@
                 <form id="contact-form" class="contact__form">
                     <input type="text" name="from_name" placeholder="Name" class="contact__input" required>
                     <input type="email" name="from_email" placeholder="Email" class="contact__input" required>
-                    <textarea name="message" rows="10" placeholder="Your message" class="contact__input" required></textarea>
+                    <textarea name="message" rows="8" placeholder="Your message" class="contact__input" required></textarea>
                     <button type="submit" class="contact__button button" id="contact-btn">Send Message</button>
                 </form>
             </div>
@@ -520,12 +507,17 @@
     <footer class="footer">
         <p class="footer__title">Lucas Cristaldo</p>
         <div class="footer__social">
-            <a href="https://www.linkedin.com/in/lcristaldo/" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/Lkodestyle" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class="fa-brands fa-github"></i></a>
-            <a href="mailto:cristaldolucas01@gmail.com" class="footer__icon"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/lcristaldo/" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Lkodestyle" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:cristaldolucas01@gmail.com" class="footer__icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        <p class="footer__copy">&#169; Lucas Cristaldo. All rights reserved</p>
+        <p class="footer__copy">&#169; 2025 Lucas Cristaldo. All rights reserved.</p>
     </footer>
+
+    <!--===== BACK TO TOP =====-->
+    <a href="#home" class="scrolltop" id="scroll-top" aria-label="Back to top">
+        <i class="bx bx-chevron-up"></i>
+    </a>
 
     <!--===== EMAILJS =====-->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
