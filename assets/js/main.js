@@ -74,7 +74,13 @@ contactForm.addEventListener('submit', (e) => {
     contactBtn.textContent = 'Sending...'
     contactBtn.disabled = true
 
-    emailjs.sendForm('service_9w9o86s', 'template_083w1iu', contactForm)
+    const templateParams = {
+        name: contactForm.from_name.value,
+        message: contactForm.message.value,
+        time: new Date().toLocaleString()
+    }
+
+    emailjs.send('service_9w9o86s', 'template_083w1iu', templateParams)
         .then(() => {
             contactBtn.textContent = 'Sent!'
             contactForm.reset()
@@ -102,3 +108,5 @@ sr.reveal('.home__social, .about__info', { delay: 400 })
 sr.reveal('.home__social-icon', { interval: 200 })
 sr.reveal('.skills__data, .experience__item, .contact__info-item, .contact__input', { interval: 200 })
 sr.reveal('.skills__cert-tag', { interval: 100 })
+sr.reveal('.cases__item', { interval: 200 })
+sr.reveal('.blog__item', { interval: 200 })
