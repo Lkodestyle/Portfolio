@@ -1,0 +1,30 @@
+name: Lighthouse Performance Audit
+
+on:
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  lighthouse:
+    name: Performance Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli http-server
+
+      - name: Start local server
+        run: |
+          http-server . -p 8080 &
+          sleep 3
+
+      - name: Run Lighthouse CI
+        run: lhci autorun --config=.github/lighthouse/lighthouserc.json || true
+        env:
+          LHCI_GITHUB_APP_TOKEN: ""
