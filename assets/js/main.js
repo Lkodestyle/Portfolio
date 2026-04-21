@@ -76,6 +76,7 @@ contactForm.addEventListener('submit', (e) => {
 
     const templateParams = {
         name: contactForm.from_name.value,
+        email: contactForm.from_email.value,
         message: contactForm.message.value,
         time: new Date().toLocaleString()
     }
