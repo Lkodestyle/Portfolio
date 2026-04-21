@@ -20,11 +20,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Minify CSS
-        uses: nickytonline/minify-css-action@v0.0.3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          input-dir: assets/css
-          output-dir: assets/css
+          node-version: '22'
+
+      - name: Minify CSS
+        run: |
+          npm install -g clean-css-cli
+          cleancss -o assets/css/styles.css assets/css/styles.css
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
