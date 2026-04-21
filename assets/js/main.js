@@ -74,7 +74,13 @@ contactForm.addEventListener('submit', (e) => {
     contactBtn.textContent = 'Sending...'
     contactBtn.disabled = true
 
-    emailjs.sendForm('service_9w9o86s', 'template_083w1iu', contactForm)
+    const templateParams = {
+        name: contactForm.from_name.value,
+        message: contactForm.message.value,
+        time: new Date().toLocaleString()
+    }
+
+    emailjs.send('service_9w9o86s', 'template_083w1iu', templateParams)
         .then(() => {
             contactBtn.textContent = 'Sent!'
             contactForm.reset()
