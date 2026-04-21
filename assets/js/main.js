@@ -28,7 +28,7 @@ function scrollActive() {
 
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50
+        const sectionTop = current.offsetTop - 58
         const sectionId = current.getAttribute('id')
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -39,6 +39,17 @@ function scrollActive() {
     })
 }
 window.addEventListener('scroll', scrollActive)
+
+/*==================== SCROLL TOP ====================*/
+function scrollTop() {
+    const scrollTopBtn = document.getElementById('scroll-top')
+    if (window.scrollY >= 400) {
+        scrollTopBtn.classList.add('scrolltop--show')
+    } else {
+        scrollTopBtn.classList.remove('scrolltop--show')
+    }
+}
+window.addEventListener('scroll', scrollTop)
 
 /*================ DARK LIGHT THEME ================*/
 const themeButton = document.getElementById('theme-button')
@@ -62,6 +73,50 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*================ TYPING EFFECT ================*/
+const typedElement = document.getElementById('typed-text')
+const commands = [
+    'aws eks get-token --cluster production',
+    'terraform apply -auto-approve',
+    'kubectl get pods --all-namespaces',
+    'docker build -t app:latest .',
+    'gh workflow run deploy.yml',
+    'ansible-playbook site.yml'
+]
+
+let commandIndex = 0
+let charIndex = 0
+let isDeleting = false
+
+function typeEffect() {
+    const currentCommand = commands[commandIndex]
+
+    if (!isDeleting) {
+        typedElement.textContent = currentCommand.substring(0, charIndex + 1)
+        charIndex++
+
+        if (charIndex === currentCommand.length) {
+            isDeleting = true
+            setTimeout(typeEffect, 2000)
+            return
+        }
+        setTimeout(typeEffect, 50 + Math.random() * 30)
+    } else {
+        typedElement.textContent = currentCommand.substring(0, charIndex - 1)
+        charIndex--
+
+        if (charIndex === 0) {
+            isDeleting = false
+            commandIndex = (commandIndex + 1) % commands.length
+            setTimeout(typeEffect, 500)
+            return
+        }
+        setTimeout(typeEffect, 25)
+    }
+}
+
+setTimeout(typeEffect, 1000)
 
 /*===== EMAILJS CONTACT FORM =====*/
 emailjs.init('afBZWFNV6_OUuFbVh')
@@ -98,16 +153,24 @@ contactForm.addEventListener('submit', (e) => {
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
+    origin: 'bottom',
+    distance: '40px',
+    duration: 1500,
+    delay: 100,
+    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
 })
 
-sr.reveal('.home__data, .about__subtitle, .about__text', {})
-sr.reveal('.home__social, .about__info', { delay: 400 })
-sr.reveal('.home__social-icon', { interval: 200 })
-sr.reveal('.skills__data, .experience__item, .contact__info-item, .contact__input', { interval: 200 })
-sr.reveal('.skills__cert-tag', { interval: 100 })
+sr.reveal('.home__terminal', { origin: 'top', delay: 300 })
+sr.reveal('.home__title, .home__subtitle, .home__description', { interval: 100, delay: 600 })
+sr.reveal('.home__buttons', { delay: 900 })
+sr.reveal('.home__social', { delay: 1100 })
+sr.reveal('.about__data', {})
+sr.reveal('.about__info-item', { interval: 150 })
+sr.reveal('.skills__group', { interval: 200 })
+sr.reveal('.skills__data', { interval: 100 })
+sr.reveal('.skills__cert-tag', { interval: 80 })
+sr.reveal('.experience__item', { interval: 150 })
 sr.reveal('.cases__item', { interval: 200 })
-sr.reveal('.blog__item', { interval: 200 })
+sr.reveal('.expertise__item', { interval: 150 })
+sr.reveal('.contact__info-item', { interval: 150 })
+sr.reveal('.contact__form', { origin: 'right' })
