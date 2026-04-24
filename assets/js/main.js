@@ -136,7 +136,7 @@ themeButton.addEventListener('click', () => {
 
             ctx.beginPath()
             ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-            ctx.fillStyle = 'rgba(77, 157, 224, 0.5)'
+            ctx.fillStyle = 'rgba(123, 66, 188, 0.5)'
             ctx.fill()
 
             for (let j = i + 1; j < particles.length; j++) {
@@ -150,7 +150,7 @@ themeButton.addEventListener('click', () => {
                     ctx.beginPath()
                     ctx.moveTo(p.x, p.y)
                     ctx.lineTo(p2.x, p2.y)
-                    ctx.strokeStyle = `rgba(77, 157, 224, ${alpha})`
+                    ctx.strokeStyle = `rgba(123, 66, 188, ${alpha})`
                     ctx.lineWidth = 0.5
                     ctx.stroke()
                 }
@@ -275,10 +275,6 @@ const sr = ScrollReveal({
     easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
 })
 
-sr.reveal('.home__label', { origin: 'left', delay: 200, distance: '20px' })
-sr.reveal('.home__description', { delay: 800 })
-sr.reveal('.home__actions', { delay: 1000 })
-sr.reveal('.home__aside', { origin: 'right', delay: 600, distance: '60px' })
 sr.reveal('.about__data', {})
 sr.reveal('.about__info-item', { interval: 150 })
 sr.reveal('.skills__group', { interval: 200 })
