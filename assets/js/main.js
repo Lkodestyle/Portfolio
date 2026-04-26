@@ -31,10 +31,13 @@ function scrollActive() {
         const sectionTop = current.offsetTop - 58
         const sectionId = current.getAttribute('id')
 
+        const navEl = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+        if (!navEl) return
+
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
+            navEl.classList.add('active')
         } else {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
+            navEl.classList.remove('active')
         }
     })
 }
@@ -234,37 +237,55 @@ function typeEffect() {
 setTimeout(typeEffect, 1000)
 
 /*===== EMAILJS CONTACT FORM =====*/
-emailjs.init('afBZWFNV6_OUuFbVh')
+if (typeof emailjs !== 'undefined') {
+    emailjs.init('afBZWFNV6_OUuFbVh')
 
-const contactForm = document.getElementById('contact-form')
-const contactBtn = document.getElementById('contact-btn')
+    const contactForm = document.getElementById('contact-form')
+    const contactBtn = document.getElementById('contact-btn')
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    contactBtn.textContent = 'Sending...'
-    contactBtn.disabled = true
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        contactBtn.textContent = 'Sending...'
+        contactBtn.disabled = true
 
-    const templateParams = {
-        name: contactForm.from_name.value,
-        email: contactForm.from_email.value,
-        message: contactForm.message.value,
-        time: new Date().toLocaleString()
-    }
+        const templateParams = {
+            name: contactForm.from_name.value,
+            email: contactForm.from_email.value,
+            message: contactForm.message.value,
+            time: new Date().toLocaleString()
+        }
 
-    emailjs.send('service_9w9o86s', 'template_083w1iu', templateParams)
-        .then(() => {
-            contactBtn.textContent = 'Sent!'
-            contactForm.reset()
-            setTimeout(() => {
-                contactBtn.textContent = 'Send Message'
+        emailjs.send('service_9w9o86s', 'template_083w1iu', templateParams)
+            .then(() => {
+                contactBtn.textContent = 'Sent!'
+                contactForm.reset()
+                setTimeout(() => {
+                    contactBtn.textContent = 'Send Message'
+                    contactBtn.disabled = false
+                }, 3000)
+            })
+            .catch(() => {
+                contactBtn.textContent = 'Error, try again'
                 contactBtn.disabled = false
-            }, 3000)
+            })
+    })
+}
+
+/*===== ARCHITECTURE TOOLTIP =====*/
+;(function() {
+    const tooltip = document.getElementById('arch-tooltip')
+    if (!tooltip) return
+    const nodes = document.querySelectorAll('.arch__node')
+
+    nodes.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+            tooltip.textContent = node.getAttribute('data-info')
         })
-        .catch(() => {
-            contactBtn.textContent = 'Error, try again'
-            contactBtn.disabled = false
+        node.addEventListener('mouseleave', () => {
+            tooltip.textContent = ''
         })
-})
+    })
+})()
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
@@ -280,6 +301,8 @@ sr.reveal('.about__info-item', { interval: 150 })
 sr.reveal('.skills__group', { interval: 200 })
 sr.reveal('.skills__data', { interval: 100 })
 sr.reveal('.skills__cert-tag', { interval: 80 })
+sr.reveal('.pipeline__step', { interval: 120 })
+sr.reveal('.arch__row', { interval: 200 })
 sr.reveal('.timeline__item', { interval: 150 })
 sr.reveal('.cases__item', { interval: 200 })
 sr.reveal('.expertise__item', { interval: 150 })

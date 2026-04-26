@@ -82,6 +82,7 @@
                     <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#architecture" class="nav__link">Architecture</a></li>
                     <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
                     <li class="nav__item"><a href="#cases" class="nav__link">Projects</a></li>
                     <li class="nav__item"><a href="#expertise" class="nav__link">Expertise</a></li>
@@ -106,7 +107,7 @@
                     <div class="home__intro">
                         <div class="home__label">
                             <span class="home__label-line"></span>
-                            <span class="home__label-text">Senior DevOps Engineer</span>
+                            <span class="home__label-text">Available for senior roles · Remote-first</span>
                         </div>
 
                         <h1 class="home__title" aria-label="I architect systems that never sleep">
@@ -280,6 +281,126 @@
                     <span class="skills__cert-tag">Microsoft Copilot Engineer</span>
                     <span class="skills__cert-tag">Architecture with Terraform</span>
                 </div>
+            </div>
+        </section>
+
+        <!--===== PIPELINE =====-->
+        <section class="pipeline section" id="pipeline">
+            <span class="section-label">Pipeline</span>
+            <h2 class="section-title">Every commit, this happens</h2>
+
+            <div class="pipeline__track bd-grid">
+                <div class="pipeline__step pipeline__step--done">
+                    <span class="pipeline__check">✓</span>
+                    <span class="pipeline__name">Lint</span>
+                    <span class="pipeline__detail">eslint · prettier</span>
+                </div>
+                <div class="pipeline__connector"></div>
+                <div class="pipeline__step pipeline__step--done">
+                    <span class="pipeline__check">✓</span>
+                    <span class="pipeline__name">Build</span>
+                    <span class="pipeline__detail">docker · multi-stage</span>
+                </div>
+                <div class="pipeline__connector"></div>
+                <div class="pipeline__step pipeline__step--active">
+                    <span class="pipeline__check">✓</span>
+                    <span class="pipeline__name">Test</span>
+                    <span class="pipeline__detail">pytest · 267 passed</span>
+                </div>
+                <div class="pipeline__connector"></div>
+                <div class="pipeline__step">
+                    <span class="pipeline__icon">►</span>
+                    <span class="pipeline__name">Scan</span>
+                    <span class="pipeline__detail">trivy · 0 critical</span>
+                </div>
+                <div class="pipeline__connector"></div>
+                <div class="pipeline__step">
+                    <span class="pipeline__icon">5</span>
+                    <span class="pipeline__name">Plan</span>
+                    <span class="pipeline__detail">tf plan · +12 ~3</span>
+                </div>
+                <div class="pipeline__connector"></div>
+                <div class="pipeline__step">
+                    <span class="pipeline__icon">6</span>
+                    <span class="pipeline__name">Deploy</span>
+                    <span class="pipeline__detail">rolling · zero-downtime</span>
+                </div>
+            </div>
+        </section>
+
+        <!--===== ARCHITECTURE =====-->
+        <section class="arch section" id="architecture">
+            <span class="section-label">Architecture</span>
+            <h2 class="section-title">Hover any node</h2>
+            <p class="section-subtitle">Reference architecture I deploy with Terraform — fully managed, multi-AZ, observable.</p>
+
+            <div class="arch__diagram bd-grid">
+                <div class="arch__row">
+                    <div class="arch__node" data-info="50k MAU, CDN caching, WAF rules for OWASP top 10">
+                        <span class="arch__icon">○</span>
+                        <span class="arch__name">Users</span>
+                        <span class="arch__sub">~50k MAU</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="CloudFront distribution with custom domain, SSL, edge locations in 15+ regions">
+                        <span class="arch__icon">◈</span>
+                        <span class="arch__name">CloudFront</span>
+                        <span class="arch__sub">CDN · WAF</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="Application Load Balancer with path-based routing, health checks, auto-scaling target groups">
+                        <span class="arch__icon">▽</span>
+                        <span class="arch__name">ALB</span>
+                        <span class="arch__sub">multi-AZ</span>
+                    </div>
+                </div>
+                <div class="arch__vlines"></div>
+                <div class="arch__row">
+                    <div class="arch__node" data-info="Aurora PostgreSQL with multi-region read replicas, automated backups, point-in-time recovery">
+                        <span class="arch__icon">▣</span>
+                        <span class="arch__name">RDS Aurora</span>
+                        <span class="arch__sub">multi-region</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="20+ containerized microservices on Fargate, auto-scaling, service mesh with App Mesh">
+                        <span class="arch__icon">▢</span>
+                        <span class="arch__name">ECS Fargate</span>
+                        <span class="arch__sub">20+ services</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="Event-driven functions for async processing, SQS/SNS triggers, Step Functions orchestration">
+                        <span class="arch__icon">λ</span>
+                        <span class="arch__name">Lambda</span>
+                        <span class="arch__sub">event-driven</span>
+                    </div>
+                </div>
+                <div class="arch__vlines"></div>
+                <div class="arch__row">
+                    <div class="arch__node" data-info="Full observability stack: metrics, logs, traces, APM, custom dashboards, PagerDuty integration">
+                        <span class="arch__icon">◉</span>
+                        <span class="arch__name">Datadog</span>
+                        <span class="arch__sub">obs · alerts</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="Infrastructure as Code: 100+ modules, remote state in S3, workspace-per-environment, drift detection">
+                        <span class="arch__icon">▲</span>
+                        <span class="arch__name">Terraform</span>
+                        <span class="arch__sub">IaC · GitOps</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="CI/CD pipelines with PR-based approvals, automated testing, Terraform plan on PR, deploy on merge">
+                        <span class="arch__icon">◑</span>
+                        <span class="arch__name">GitHub Actions</span>
+                        <span class="arch__sub">CI / CD</span>
+                    </div>
+                    <div class="arch__line"></div>
+                    <div class="arch__node" data-info="S3 for object storage with intelligent tiering, Glacier for compliance archives, lifecycle policies">
+                        <span class="arch__icon">▤</span>
+                        <span class="arch__name">S3 + Glacier</span>
+                        <span class="arch__sub">lifecycle</span>
+                    </div>
+                </div>
+                <div class="arch__tooltip" id="arch-tooltip"></div>
             </div>
         </section>
 
